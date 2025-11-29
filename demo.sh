@@ -92,7 +92,8 @@ SPLASH_WAIT=1 # Wait for splash to finish 1=yes 0=no
 
 function DesktopMain(){
     [ "$DEBUG" -eq 1 ] && printf "function DesktopMain line: %i\n" "$LINENO"
-    # Display_Splash &
+    # Display_Splash & # if you do it here then every time DesktopMain is called it will pop up. I generally only do it at the start
+    # and when processes are going to take a bit of time, let the user know that the program is still running.
     local results
     local yad_results
     local Menu
