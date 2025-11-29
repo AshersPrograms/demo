@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Title: 
+# Title: The is a demo of a Yad boiler plate.
 # Author: Gregory Wienands
 # _____/\\\\\\\\\________/\\\\\\\\\\\____/\\\________/\\\__/\\\\\\\\\\\\\\\____/\\\\\\\\\_____        
 #  ___/\\\\\\\\\\\\\____/\\\/////////\\\_\/\\\_______\/\\\_\/\\\///////////___/\\\///////\\\___       
@@ -10,19 +10,20 @@
 #       _\/\\\_______\/\\\__/\\\______\//\\\__\/\\\_______\/\\\_\/\\\_____________\/\\\_____\//\\\__  
 #        _\/\\\_______\/\\\_\///\\\\\\\\\\\/___\/\\\_______\/\\\_\/\\\\\\\\\\\\\\\_\/\\\______\//\\\_ 
 #         _\///________\///____\///////////_____\///________\///__\///////////////__\///________\///__2025
-#         All Right Reserved 2025
 # Additional Authors: 
 # Additional Authors: 
-# Filename: 
-# Description: 
+# Filename: demo.sh
+# Description: This is a boiler plate for Yad and BASH scripting
 # Additional_Notes: 
-# Version: 
+# Version: 25.11
+VERSION="25.11"
 YEAR=$(date -u +%Y)
-# Date: 
+# Date: 11-28-2025
+# Last_Modified: 11-28-2025
 # Last_Modified: 
-# Source: 
+# Source: https://github.com/AshersPrograms/demo/blob/main/demo.sh
 # Additional_Sources: 
-# License: 
+# License: GPL V3
 # Additional_Licenses: 
 # Credits: 
 # Additional Credits: 
@@ -50,12 +51,12 @@ YEAR=$(date -u +%Y)
 DEBUG=0 # turns debugging off
 # DEBUG=1 # turns debugging on
 
-Creator="Gregory Wienands"
-CompanyName="ashersprograms"
-CompanyNameProper="Ashers Programs.com"
-ProgramsName="basicDocument.sh"
-ProgramsNameProper="Basic Document"
-ProgramsNameShort="basicDocument"
+Creator="Your Name"
+CompanyName="yourcompanyname"
+CompanyNameProper="Your Company Name"
+ProgramsName="demo.sh"
+ProgramsNameProper="Your Demos Name"
+ProgramsNameShort="demo"
  
 URL_LINK="https://www.$CompanyName.com"
 
@@ -64,7 +65,8 @@ IconWarningLocation="/usr/share/${CompanyName}/${ProgramsNameShort}/img/${Progra
 IconErrorLocation="/usr/share/${CompanyName}/${ProgramsNameShort}/img/${ProgramsNameShort}_error.png"
 ImageSplash="$HOME/Thunar-Background.png"
 
-Application_Splash="/usr/bin/asplash"
+Application_Splash="/usr/bin/asplash" # this application, asplash, is not necessary for the application to run.
+# This is a program that is a Buttonless, Borderless dialog box that displays images to the screen.
 Application_Yad="/usr/bin/yad"
 
 Program_Awk="/usr/bin/awk"
@@ -523,31 +525,5 @@ while getopts "aDehi:lv" option; do
         ;;
     esac
 done 
-# if [ "$AmountOfParams" -eq 0 ]; then
-#     [ "$DEBUG" -eq 1 ] && printf "There where zero command line arguments given line: %i\n" "$LINENO"
-#     Help
-#     exit 1;
-# fi
-# if [ "$SHOW_ABOUT" -eq 0 ] && [ "$SHOW_EXAMPLES" -eq 0 ] && [ "$SHOW_HELP" -eq 0 ] && \
-# [ "$SHOW_LICENSE" -eq 0 ] && [ "$SHOW_VERSION" -eq 0 ] && [ -z "$EXAMPLE_INPUT" ] && \
-# [ "$ERRORS" -eq 0 ]; then # CLI MODE
-#     if [ "$AmountOfParams" -eq 0 ]; then
-#         read -r -p "The application has a question for you? " EXAMPLE_INPUT
-#     else
-#         EXAMPLE_INPUT=""
-#         for num in $(seq 1 "$AmountOfParams"); do # Built-in seq
-#             if [ "$num" -eq 1 ]; then
-#                 EXAMPLE_INPUT="$1"
-#                 shift
-#             else
-#                 EXAMPLE_INPUT+=" $1"
-#                 shift
-#             fi
-#         done
-#         EXAMPLE_INPUT=$(printf "%s\n" "$EXAMPLE_INPUT" | $Program_Sed 's/\// /g') # This will filter out any forward slashes that they may get from the instructions.
-#     fi
-# else
-#     [ "$DEBUG" -eq 1 ] && printf "A different mode is ON line: %i\n" "$LINENO"
-# fi
 main
 # EOF
