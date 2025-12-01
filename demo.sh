@@ -20,6 +20,7 @@ VERSION="25.11"
 YEAR=$(date -u +%Y)
 # Date: 11-28-2025
 # Last_Modified: 11-28-2025
+# Last_Modified: 11-30-2025
 # Last_Modified: 
 # Source: https://github.com/AshersPrograms/demo/blob/main/demo.sh
 # Additional_Sources: 
@@ -66,7 +67,7 @@ IconErrorLocation="/usr/share/${CompanyName}/${ProgramsNameShort}/img/${Programs
 ImageSplash="$HOME/Thunar-Background.png"
 
 Application_Splash="/usr/bin/asplash" # this application, asplash, is not necessary for the application to run.
-# This is a program that is a Buttonless, Borderless dialog box that displays images to the screen.
+# This is a program that is a Buttonless, Borderless dialog box that displays images to the screen for a specified amount of time.
 Application_Yad="/usr/bin/yad"
 
 Program_Awk="/usr/bin/awk"
@@ -486,9 +487,7 @@ function main(){
     if [ -n "$EXAMPLE_INPUT" ]; then
         printf "EXAMPLE_INPUT was used: %s\n" "$EXAMPLE_INPUT"
     fi
-    SPLASH_WAIT=1
     Display_Splash
-    SPLASH_WAIT=0
     DesktopMain
 }
 
