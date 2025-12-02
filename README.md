@@ -28,9 +28,9 @@ This is a demonstration file so I can take a lesson and recheck features and abi
         - one more please
 2. what about this whole complete long line that just keeps going and going and going and does not stop. This is a demonstration file so I can take a lesson and recheck features and abilities of such said demo.
 2. Another list line
-    3. multi lines maybe
-    3. and another
-    3. the third line
-        4. nested again
-        4. and again
-        4. one more please
+    - multi lines maybe
+    - and another
+    - the third line
+        - nested again
+        - and again
+        - one more please
