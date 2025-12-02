@@ -35,18 +35,9 @@ YEAR=$(date -u +%Y)
 # Website_For_Video: 
 # Start_Time: 
 # Parent_File: 
-# Sibling_File: 
-# Sibling_File: 
-# Child_File: 
-# Child_File: 
-# Linkable: 1
-# Display_Links: 1
-# Display_Code: 1
-# Visible: 1
-# Article: 
 
 # compile options: 
-### shellcheck --exclude=SC2016 basicDocument_yad.sh
+### shellcheck demo.sh
 
 # Start Your Script Here
 DEBUG=0 # turns debugging off
@@ -364,7 +355,7 @@ function Help(){
     local Section
     Section="$1"
     if [ "$Section" == "About" ]; then
-        #######################################################################
+        ############## About #################################################
         [ "$DEBUG" -eq 1 ] && printf "Section About line: %i\n" "$LINENO"
         printf "%b\n" "$STARS
 The application $ProgramsNameProper was created by $Creator
@@ -372,7 +363,7 @@ The application $ProgramsNameProper was created by $Creator
 Version: $VERSION   
 "
     elif [ "$Section" == "Examples" ]; then
-        #######################################################################
+        ############## Examples ##############################################
         [ "$DEBUG" -eq 1 ] && printf "function Examples line: %i\n" "$LINENO"
         printf "%b\n" "$STARS
 ******** Created by: $CompanyNameProper **********
@@ -417,16 +408,16 @@ $ProgramsNameProper, Created by: $Creator
 $URL_LINK
 $STARS"
     elif [ "$Section" == "License" ]; then
-        #######################################################################
+        ############## License ###############################################
         [ "$DEBUG" -eq 1 ] && printf "Section License line: %i\n" "$LINENO"
         printf "Copyright %i %s %s\n" "$YEAR" "$Creator" "$CompanyNameProper"
         printf "%s\n" "$URL_LINK"
     elif [ "$Section" == "Version" ]; then
-        #######################################################################
+        ############## Version ###############################################
         [ "$DEBUG" -eq 1 ] && printf "function Version line: %i\n" "$LINENO"
         printf "%b\n" "$ProgramsNameProper Created by $Creator\nVersion: $VERSION"
     else # same as "Help"
-        #######################################################################
+        ############## Help ##################################################
         [ "$DEBUG" -eq 1 ] && printf "Section Help line: %i\n" "$LINENO"
         printf "%b\n" "$STARS
 ******** Created by: $CompanyNameProper **********
