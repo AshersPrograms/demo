@@ -48,7 +48,13 @@ This is a demonstration file so I can take a lesson and recheck features and abi
 3. And also right here
 
 ## Just adding another section to update the commit with
-- code
-- test Yeah right
-- try More like pray it does not blow up in your face
-- retest That for sure
+    - code
+    - test Yeah right
+    - try More like pray it does not blow up in your face
+    - retest That for sure
+
+## Got more changes coming here
+- Approval Ratings
+- TV Ratings
+- Internet Ratings
+- Radio Ratings
