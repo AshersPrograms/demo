@@ -35,3 +35,12 @@ This is a demonstration file so I can take a lesson and recheck features and abi
         - nested again
         - and again
         - one more please
+
+## adding more lines the the dev branch
+3. What is your favorite Music
+3. What is your favorite types of Food
+    - American
+    - Mexican
+    - Chinese
+    - Italian
+    - other
