@@ -58,3 +58,11 @@ This is a demonstration file so I can take a lesson and recheck features and abi
 - TV Ratings
 - Internet Ratings
 - Radio Ratings
+
+## ![Image of Demo](img/demo_250x250.png) This is an Image
+- Image inline
+- Choose image that work in Black and White
+- Choose images that work well when small
+- Choose images that are easy to remember
+- Choose images that are not busy
+
