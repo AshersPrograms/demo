@@ -354,6 +354,7 @@ function Help(){
     [ "$DEBUG" -eq 1 ] && printf "function Help line: %i\n" "$LINENO"
     local Section
     Section="$1"
+    [ "$DEBUG" -eq 1 ] && printf "Section: %s line: %i\n" "$Section" "$LINENO"
     if [ "$Section" == "About" ]; then
         ############## About #################################################
         [ "$DEBUG" -eq 1 ] && printf "Section About line: %i\n" "$LINENO"
@@ -490,6 +491,7 @@ while getopts "aDehi:lv" option; do
         ;;
     D) # debug on
         DEBUG=1
+        [ "$DEBUG" -eq 1 ] && printf "Debugging has been turned on. line: %i\n" "$LINENO"
         ;;
     e) # examples
         SHOW_EXAMPLES=1
