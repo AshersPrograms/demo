@@ -15,8 +15,8 @@
 # Filename: demo.sh
 # Description: This is a boiler plate for Yad and BASH scripting
 # Additional_Notes: 
-# Version: 25.11
-VERSION="25.11"
+# Version: 25.12
+VERSION="25.12"
 YEAR=$(date -u +%Y)
 # Date: 11-28-2025
 # Last_Modified: 11-28-2025
@@ -81,6 +81,8 @@ SSD_DRIVE="TRUE"
 SPLASH_SLEEP=2 # Time to pause for the splash screen if hard drive is fast
 SPLASH_SLEEP_NON_SSD=10 # Time to pause for the splash screen if slow hard drive is being used
 SPLASH_WAIT=1 # Wait for splash to finish 1=yes 0=no 
+
+ERRORS_OUTPUT=""
 
 function DesktopMain(){
     [ "$DEBUG" -eq 1 ] && printf "function DesktopMain line: %i\n" "$LINENO"
@@ -419,11 +421,21 @@ $STARS"
     else # same as "Help"
         ############## Help ##################################################
         [ "$DEBUG" -eq 1 ] && printf "Section Help line: %i\n" "$LINENO"
+        if [ "$ERRORS" -eq 1 ] && [ -n "$ERRORS_OUTPUT" ]; then
+            stars1="$STARS
+$STARS
+There was an error
+$ERRORS_OUTPUT
+
+$STARS"
+        else
+            stars1="$STARS"
+        fi
         printf "%b\n" "$STARS
 ******** Created by: $CompanyNameProper **********
 $STARS
 ************ $ProgramsNameProper ***********************
-$STARS
+$stars1
 Purpose: 
 $ProgramsName: is a next generation application 
 making it ideal for anyone looking to enhance 
@@ -472,7 +484,7 @@ function main(){
         exit 0
     fi
     if [ "$ERRORS" -eq 1 ]; then
-        Help "Help"
+        Help "Help" "$ERRORS_OUTPUT"
         exit 1
     fi
     if [ -n "$EXAMPLE_INPUT" ]; then
@@ -509,10 +521,12 @@ while getopts "aDehi:lv" option; do
     :) # If expected argument omitted:
         [ "$DEBUG" -eq 1 ] && printf "Error: -%s requires an argument. line: %s\n" "${OPTARG}" "$LINENO"
         ERRORS=1
+        ERRORS_OUTPUT="Error: -${OPTARG} requires an argument."
         ;;
     \?) # Invalid option
         [ "$DEBUG" -eq 1 ] && printf "Invalid Option line: %I\n" "$LINENO"
         ERRORS=1
+        ERRORS_OUTPUT="Invalid Option."
         ;;
     esac
 done 
